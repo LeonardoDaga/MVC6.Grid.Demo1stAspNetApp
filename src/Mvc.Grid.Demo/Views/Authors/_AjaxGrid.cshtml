@@ -1,0 +1,18 @@
+﻿@using NonFactors.Mvc.Grid;
+
+@model IEnumerable<Mvc.Grid.Demo.Models.Author>
+
+@(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.FirstMidName).Titled("FirstMidName");
+        columns.Add(model => model.LastName).Titled("LastName");
+    })
+    .Pageable(pager =>
+    {
+        pager.PagesToDisplay = 2;
+        pager.RowsPerPage = 2;
+    })
+    .Sortable()
+)

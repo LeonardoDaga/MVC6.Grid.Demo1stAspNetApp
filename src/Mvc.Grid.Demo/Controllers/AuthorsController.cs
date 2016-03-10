@@ -21,6 +21,18 @@ namespace Mvc.Grid.Demo.Controllers
             return View(_context.Author.ToList());
         }
 
+        [HttpGet]
+        public ActionResult Ajax()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult GridPartial()
+        {
+            return PartialView("_AjaxGrid", _context.Author.ToList());
+        }
+
         // GET: Authors/Details/5
         public IActionResult Details(int? id)
         {
